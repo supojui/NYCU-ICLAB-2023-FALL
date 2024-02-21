@@ -1,7 +1,7 @@
 ## 簡介
 這次lab要實作SD卡跟DRAM對接中間的bridge，並且完成pattern去檢查各個spec，測bridge的部分有助教寫好的正確的pattern可以驗，而自己完成的pattern則會有助教提供，違反不同spec的design去驗，沒有performance分，也就是說這次lab只要所有case都跑過就可以拿滿分。
 
-Lab的重點會放在pattern跟AXI lite這個傳輸協定，這是第一次寫pattern，可以參考前兩次lab助教的pattern，我想有學過C、C++的人應該會覺得很熟悉，pattern的寫法就很像在寫軟體，應該花點時間trial and error就可以做出來。
+Lab的重點會放在pattern跟AXI lite這個傳輸協定，這是第一次寫pattern，可以參考前兩次lab助教的pattern，我想有學過C、C++的人應該會覺得很熟悉，pattern的寫法就很像在寫軟體語言，應該花點時間trial and error就可以做出來。
 
 ## 優化Tips
 沒有performance分，所以好好練習寫好pattern，因為之後就要自己寫了，也可以順便學一下怎麼用python、C等生測資，後面有些lab的測資用verilog生會很麻煩。AXI lite的handshake流程之後會非常常出現，建議在這次lab就好好搞懂。
