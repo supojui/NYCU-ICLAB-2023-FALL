@@ -1,1 +1,10 @@
+## 簡介
+這次lab要實做兩種DL裡常用的convolution，第一種就是跟lab04相同一般的convolution，第二種是transpose convolution，詳細的算法可以參考pdf。另外，image matrix的size會有三種8x8、16x16、32x32，且一次會input 16張image進來，並且會根據另一個input(matrix_idx)來決定要使用16張image的哪一張去做convolution。
 
+且有規定一定要使用memory。
+
+
+## 優化Tips
+這個lab雖然convolution、max pooling的部分跟lab04一樣，但我覺得比lab04難，首先要先熟悉memory的用法，建議可以先自己生一些memory，去估一下面機會有多大，並摸透read、write的timing；再來，要決定演算法、memory的大小還有要用dual或single port，且這次spec裡的面積上限、合成時間上限也是有可能會超過的，所以在寫之前，務必先估一下面積有沒有可能超過，不然合成跑下去就要1~2小時，時間很可能不夠。
+
+當初因為好的演算法debug會很難，我們怕做不完，所以就用了最直接的方式去做，只求1de有過就好，因此演算法部分沒有建議可以給，如果有想要拚performance的人可以試試看用systolic array。
