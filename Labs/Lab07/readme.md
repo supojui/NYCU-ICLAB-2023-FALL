@@ -8,4 +8,5 @@ Lab07難的地方不是架構，基本上照著pdf上給的handshake、FIFO架�
 
 如果是在FIFO synchronizer也有遇到convergence issue應該也可以用類似的方法解決，其他functional、metastability check就照pdf上這些issue的解釋去慢慢改應該就沒什麼問題。
 
+Performance的部分因為這次只佔5%，所以沒有特別去拚。
 
