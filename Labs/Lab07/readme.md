@@ -2,4 +2,10 @@
 這次lab要實作pseudo random generator，且要跨3個clock domain，clock domain間要分別用上課教的handshake synchronizer、FIFO synchronizer去做同步，clk3會有4種period，要通過demo必須4種period都可以跑過01，但03只需要通過20.7ns即可。另外，還需要通過JG的clock domain crossing檢查，才可以拿到全部的分數。
 
 ## 優化Tips
-Lab07難的地方不是架構，基本上照著pdf上給的handshake、FIFO架構去做就可以過01
+Lab07難的地方不是架構，基本上照著pdf上給的handshake、FIFO架構去做就可以過01，如果一直卡在某個period過不去的話，通常是因為clk3的period差太多，導致輸出的counter數錯。比較麻煩的是jg的CDC檢查，這是這學期新加的tool，所以助教們好像也沒有很熟。
+
+大部分的人都會遇到convergence issue，因為jg的messege裡不會寫確切發生convergence的那個變數，我當初的錯就是報在cur_state上(根本沒有跨clock domain的訊號)，所以那個error messege只是參考用，我們當初遇到的幾乎都是在handshake synchronizer上，在handshake synchronizer裡要用到dbusy這個訊號，在clk2 module裡面控制，如果不能傳值到clk2 module時，clk2 module就把busy拉成1，且handshake synchronizer的output部分也要加上如果dbusy == 1就不output的判斷。
+
+如果是在FIFO synchronizer也有遇到convergence issue應該也可以用類似的方法解決，其他functional、metastability check就照pdf上這些issue的解釋去慢慢改應該就沒什麼問題。
+
+
