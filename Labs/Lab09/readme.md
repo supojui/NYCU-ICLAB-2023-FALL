@@ -11,3 +11,4 @@ Lab09要實作飲料調配的架構，pattern會給3種指令：
    Pattern給定今天的日期，確認原料桶的有效日期有沒有到期，如果到期就output error messege(2'b01)，沒問題就output no error(2'b00)。
 
 ## 優化Tips
+Lab09是第一次介紹system verilog，其實就很像加入物件導向的verilog，個人寫的沒有很習慣，剛開始寫可以邊看code邊學寫法，因為助教的講義教得我覺得很散。design的部分沒有很難，比較麻煩的應該是pattern的部分，需要注意，lab09是跟lab10同時間demo，因為lab10就是寫lab09的pattern，針對這次的performance，主要我覺得可以放在怎麼樣把register的數量、大小開小一點，可以仔細去想一下有哪些東西是真的需要存下來or傳到bridge的，因為cycle time、latency大家理論上會差不多。
