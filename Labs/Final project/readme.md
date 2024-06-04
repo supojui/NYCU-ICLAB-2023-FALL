@@ -4,3 +4,6 @@ Final project要實作的是CPU架構，要能支援各種指令，基本上就�
 ## 優化Tips
 這次lab的SRAM限制是有用就好，因此我只有加上instruction cache，這樣的生活品質會好很多，detail可以去看我的report。
 比較需要注意的是pattern裡要特別去測有loop的情況，不一定每次都會做到最後一個instruction才結束，可能中間遇到一個出不去的loop，就會一直在裡面打轉，如果是這種情況，助教的pattern會在loop裡的某個instruction結束(印象中是instruction個數到一定之後就會結束)，如果沒有考慮到這種情況，就會像我一樣，最後一筆的io_stall沒有拉下來，導致pattern檢查不到，最後就demo fail了。
+
+上面的兩個python檔是用來生pattern的，是下面這位大佬寫的，基本上就執行兩個python檔後，就會生出可以用的test pattern。
+https://github.com/mirkat1206/2021_Spring_NCTU_ICLAB/tree/main/Final_Project
